@@ -6,6 +6,7 @@
   - [Day 1 - Introduction](#day-1---introduction)
   - [Day 2 - Variables, Builtin Functions](#day-2---variables-builtin-functions)
   - [Day 3 - Operators](#day-3---operators)
+  - [Day 4 - Strings](#day-4---strings)
 
 ## Day 1 - Introduction
 
@@ -239,3 +240,128 @@ print(not False)     # True
 print(not not True)  # True
 print(not not False) # False
 ```
+
+## Day 4 - Strings
+
+Escape Sequences in Strings:
+
+In Python and other programming languages \ followed by a character is an escape sequence. Let us see the most common escape characters:
+
+- \n: new line
+- \t: Tab means(8 spaces)
+- \\: Back slash
+- \': Single quote (')
+- \": Double quote (")
+
+```python
+print('I hope everyone is enjoying the Python Challenge.\nAre you ?') # line break
+print('Days\tTopics\tExercises') # adding tab space or 4 spaces 
+print('Day 1\t3\t5')
+print('Day 2\t3\t5')
+print('Day 3\t3\t5')
+print('Day 4\t3\t5')
+print('This is a backslash  symbol (\\)') # To write a backslash
+print('In every programming language it starts with \"Hello, World!\"') # to write a double quote inside a single quote
+
+# output
+I hope every one is enjoying the Python Challenge.
+Are you ?
+Days	Topics	Exercises
+Day 1	5	    5
+Day 2	6	    20
+Day 3	5	    23
+Day 4	1	    35
+This is a backslash  symbol (\)
+In every programming language it starts with "Hello, World!"
+```
+
+New Style String Formatting (str.format):
+
+This formatting is introduced in Python version 3.
+
+```python
+
+first_name = 'Asabeneh'
+last_name = 'Yetayeh'
+language = 'Python'
+formated_string = 'I am {} {}. I teach {}'.format(first_name, last_name, language)
+print(formated_string)
+# output
+I am Asabeneh Yetayeh. I teach Python
+
+
+a = 4
+b = 3
+
+print('{} + {} = {}'.format(a, b, a + b))
+print('{} - {} = {}'.format(a, b, a - b))
+print('{} * {} = {}'.format(a, b, a * b))
+print('{} / {} = {:.2f}'.format(a, b, a / b)) # limits it to two digits after decimal
+print('{} % {} = {}'.format(a, b, a % b))
+print('{} // {} = {}'.format(a, b, a // b))
+print('{} ** {} = {}'.format(a, b, a ** b))
+
+# output
+4 + 3 = 7
+4 - 3 = 1
+4 * 3 = 12
+4 / 3 = 1.33
+4 % 3 = 1
+4 // 3 = 1
+4 ** 3 = 64
+
+# Strings  and numbers
+radius = 10
+pi = 3.14
+area = pi * radius ** 2
+formated_string = 'The area of a circle with a radius {} is {:.2f}.'.format(radius, area) # 2 digits after decimal
+print(formated_string)
+```
+
+Accessing Characters in Strings by Index:
+
+```python
+language = 'Python'
+first_letter = language[0]
+print(first_letter) # P
+second_letter = language[1]
+print(second_letter) # y
+last_index = len(language) - 1
+last_letter = language[last_index]
+print(last_letter) # n
+```
+
+If we want to start from right end we can use negative indexing. -1 is the last index.
+
+```python
+language = 'Python'
+last_letter = language[-1]
+print(last_letter) # n
+second_last = language[-2]
+print(second_last) # o
+```
+
+Slicing Python Strings:
+
+In python we can slice strings into substrings.
+
+```python
+language = 'Python'
+first_three = language[0:3] # starts at zero index and up to 3 but not include 3
+print(first_three) #Pyt
+last_three = language[3:6]
+print(last_three) # hon
+# Another way
+last_three = language[-3:]
+print(last_three)   # hon
+last_three = language[3:]
+print(last_three)   # hon
+```
+
+String methods:
+
+There are many string methods which allow us to format strings. 
+
+https://github.com/Asabeneh/30-Days-Of-Python/blob/master/04_Day_Strings/04_strings.md#string-methods
+
+
