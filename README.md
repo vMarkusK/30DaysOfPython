@@ -7,6 +7,7 @@
   - [Day 2 - Variables, Builtin Functions](#day-2---variables-builtin-functions)
   - [Day 3 - Operators](#day-3---operators)
   - [Day 4 - Strings](#day-4---strings)
+  - [Day 5 - Lists](#day-5---lists)
 
 ## Day 1 - Introduction
 
@@ -363,5 +364,175 @@ String methods:
 There are many string methods which allow us to format strings. 
 
 https://github.com/Asabeneh/30-Days-Of-Python/blob/master/04_Day_Strings/04_strings.md#string-methods
+
+
+## Day 5 - Lists
+
+How to Create a List:
+
+```python
+# Using list built-in function
+empty_list = list() # this is an empty list, no item in the list
+print(len(empty_list)) # 0
+
+# Using square brackets, []
+empty_list = [] # this is an empty list, no item in the list
+print(len(empty_list)) # 0
+```
+
+Lists with initial values. We use len() to find the length of a list.
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']                     # list of fruits
+vegetables = ['Tomato', 'Potato', 'Cabbage','Onion', 'Carrot']      # list of vegetables
+animal_products = ['milk', 'meat', 'butter', 'yoghurt']             # list of animal products
+web_techs = ['HTML', 'CSS', 'JS', 'React','Redux', 'Node', 'MongDB'] # list of web technologies
+countries = ['Finland', 'Estonia', 'Denmark', 'Sweden', 'Norway']
+
+# Print the lists and its length
+print('Fruits:', fruits)
+print('Number of fruits:', len(fruits))
+print('Vegetables:', vegetables)
+print('Number of vegetables:', len(vegetables))
+print('Animal products:',animal_products)
+print('Number of animal products:', len(animal_products))
+print('Web technologies:', web_techs)
+print('Number of web technologies:', len(web_techs))
+print('Countries:', countries)
+print('Number of countries:', len(countries))
+```
+
+Lists can have items of different data types:
+
+```python
+lst = ['Asabeneh', 250, True, {'country':'Finland', 'city':'Helsinki'}] # list containing different data types
+```
+
+Accessing List Items Using Positive Indexing:
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']
+first_fruit = fruits[0] # we are accessing the first item using its index
+print(first_fruit)      # banana
+second_fruit = fruits[1]
+print(second_fruit)     # orange
+last_fruit = fruits[3]
+print(last_fruit) # lemon
+# Last index
+last_index = len(fruits) - 1
+last_fruit = fruits[last_index]
+```
+
+Accessing List Items Using Negative Indexing:
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']
+first_fruit = fruits[-4]
+last_fruit = fruits[-1]
+second_last = fruits[-2]
+print(first_fruit)      # banana
+print(last_fruit)       # lemon
+print(second_last)      # mango
+```
+
+Unpacking List Items:
+
+```python
+# First Example
+fruits = ['banana', 'orange', 'mango', 'lemon','lime','apple']
+first_fruit, second_fruit, third_fruit, *rest = lst
+print(first_fruit)     # banana
+print(second_fruit)    # orange
+print(third_fruit)     # mango
+print(rest)           # ['lemon','lime','apple']
+# Second Example about unpacking list
+first, second, third,*rest, tenth = [1,2,3,4,5,6,7,8,9,10]
+print(first)          # 1
+print(second)         # 2
+print(third)          # 3
+print(rest)           # [4,5,6,7,8,9]
+print(tenth)          # 10
+# Third Example about unpacking list
+countries = ['Germany', 'France','Belgium','Sweden','Denmark','Finland','Norway','Iceland','Estonia']
+gr, fr, bg, sw, *scandic, es = countries
+print(gr)
+print(fr)
+print(bg)
+print(sw)
+print(scandic)
+print(es)
+```
+
+Slicing Items from a List:
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']
+all_fruits = fruits[0:4] # it returns all the fruits
+# this will also give the same result as the one above
+all_fruits = fruits[0:] # if we don't set where to stop it takes all the rest
+orange_and_mango = fruits[1:3] # it does not include the first index
+orange_mango_lemon = fruits[1:]
+orange_and_lemon = fruits[::2] # here we used a 3rd argument, step. It will take every 2cnd item - ['banana', 'mango']
+
+all_fruits = fruits[-4:] # it returns all the fruits
+orange_and_mango = fruits[-3:-1] # it does not include the last index,['orange', 'mango']
+orange_mango_lemon = fruits[-3:] # this will give starting from -3 to the end,['orange', 'mango', 'lemon']
+reverse_fruits = fruits[::-1] # a negative step will take the list in reverse order,['lemon', 'mango', 'orange', 'banana']
+```
+
+Adding Items to a List:
+
+To add item to the end of an existing list we use the method append().
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.append('apple')
+print(fruits)           # ['banana', 'orange', 'mango', 'lemon', 'apple']
+fruits.append('lime')   # ['banana', 'orange', 'mango', 'lemon', 'apple', 'lime']
+print(fruits)
+```
+
+Inserting Items into a List:
+
+We can use insert() method to insert a single item at a specified index in a list. Note that other items are shifted to the right. The insert() methods takes two arguments:index and an item to insert.
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.insert(2, 'apple') # insert apple between orange and mango
+print(fruits)           # ['banana', 'orange', 'apple', 'mango', 'lemon']
+fruits.insert(3, 'lime')   # ['banana', 'orange', 'apple', 'lime', 'mango', 'lemon']
+print(fruits)
+```
+
+Removing Items from a List:
+
+The remove method removes a specified item from a list.
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon', 'banana']
+fruits.remove('banana')
+print(fruits)  # ['orange', 'mango', 'lemon', 'banana'] - this method removes the first occurrence of the item in the list
+fruits.remove('lemon')
+print(fruits)  # ['orange', 'mango', 'banana']
+```
+
+Removing Items Using Pop:
+
+The pop() method removes the specified index, (or the last item if index is not specified).
+
+```python
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruits.pop()
+print(fruits)       # ['banana', 'orange', 'mango']
+
+fruits.pop(0)
+print(fruits)       # ['orange', 'mango']
+```
+
+For joining, counting, cloning and so on see the full workbook: https://github.com/Asabeneh/30-Days-Of-Python/blob/master/05_Day_Lists/05_lists.md
+
+
+
+
 
 
