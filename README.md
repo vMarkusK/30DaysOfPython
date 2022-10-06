@@ -8,6 +8,7 @@
   - [Day 3 - Operators](#day-3---operators)
   - [Day 4 - Strings](#day-4---strings)
   - [Day 5 - Lists](#day-5---lists)
+  - [Day 6 - Tuples](#day-6---tuples)
 
 ## Day 1 - Introduction
 
@@ -531,7 +532,42 @@ print(fruits)       # ['orange', 'mango']
 
 For joining, counting, cloning and so on see the full workbook: https://github.com/Asabeneh/30-Days-Of-Python/blob/master/05_Day_Lists/05_lists.md
 
+## Day 6 - Tuples
 
+A tuple is a collection of different data types which is ordered and unchangeable (immutable). Tuples are written with round brackets, (). Once a tuple is created, we cannot change its values. We cannot use add, insert, remove methods in a tuple because it is not modifiable (mutable). Unlike list, tuple has few methods. 
+
+> never heard of this data type
+
+Creating a Tuple:
+
+```python
+# syntax
+empty_tuple = ()
+# or using the tuple constructor
+empty_tuple = tuple()
+# tupl with initial values
+tpl = ('item1', 'item2','item3')
+```
+
+Slicing and Accessing Tuple Items is similar to lists.
+
+Changing Tuples to Lists:
+
+```python
+fruits = ('banana', 'orange', 'mango', 'lemon')
+fruits = list(fruits)
+fruits[0] = 'apple'
+print(fruits)     # ['apple', 'orange', 'mango', 'lemon']
+fruits = tuple(fruits)
+print(fruits)     # ('apple', 'orange', 'mango', 'lemon')
+```
+
+Deleting Tuples:
+
+```python
+fruits = ('banana', 'orange', 'mango', 'lemon')
+del fruits
+```
 
 
 
